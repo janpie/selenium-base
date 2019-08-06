@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'gfi.automation'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.12
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    implementation 'org.testng:testng:6.14.3'
+    implementation "log4j:log4j:1.2.17"
+    implementation "org.assertj:assertj-core:3.11.1"
+    implementation "io.github.bonigarcia:webdrivermanager:3.6.0"
+    implementation 'com.relevantcodes:extentreports:2.41.2'
+    implementation 'org.slf4j:slf4j-log4j12:1.7.26'
+}
+
+test {
+    systemProperties(System.getProperties())
+    useTestNG() {
+        suites 'src/test/java/tests/suite.xml'
+    }
+
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+    }
+}

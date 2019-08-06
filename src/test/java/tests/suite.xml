@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Automated Selenium Tests" parallel="none">
+  <listeners>
+    <listener class-name="listeners.TestListener"/>
+  </listeners>
+  <test name="Sample Test1">
+    <classes>
+      <class name="tests.SampleTest"/>
+    </classes>
+  </test>
+</suite>
